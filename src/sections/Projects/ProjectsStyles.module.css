@@ -42,6 +42,7 @@
   position: absolute;
   right: 20px;
   top: 20px;
+  width: 15%;
 }
 
 .projectContent {
@@ -78,15 +79,15 @@
 }
 
 .projectIcons > div {
-  background: rgba(46, 44, 44, 0.5);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(6px);
   border-radius: 50%;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .projectIcons > div:hover { 

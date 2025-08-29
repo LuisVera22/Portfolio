@@ -4,8 +4,9 @@ import { useRef } from 'react';
 import { FaGitlab, FaLaravel, FaPhp } from 'react-icons/fa';
 import { SiSpringboot } from 'react-icons/si';
 import bootstrapLogo from '../../assets/bootstrap-logo.png';
-import codeIcon from '../../assets/favicon.ico';
 import javaLogo from '../../assets/java-logo.png';
+import logoProyectoHogar from '../../assets/logo-proyecto-hogar.png';
+import logoRbcLab from '../../assets/logo-rbc-lab.png';
 import vuejsLogo from '../../assets/vuejs-logo.png';
 import styles from './ProjectsStyles.module.css';
 
@@ -32,7 +33,7 @@ const ProjectCard = ({ project, progress }) => {
             aria-label={`Ver proyecto ${project.title}`}
         >
             <motion.img
-                src={project.image}
+                src={project.logo}
                 className={styles.projectImage}
                 loading="lazy"
                 alt={project.title}
@@ -89,6 +90,18 @@ const ProjectCard = ({ project, progress }) => {
                             key={i}
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.9 }}
+                            style={{
+                                background: icon.bgColor || 'rgba(255, 255, 255, 0.1)',
+                                backdropFilter: 'blur(6px)',
+                                borderRadius: '50%',
+                                width: '40px',
+                                height: '40px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                transition: 'all 0.3s ease',
+                                boxShadow: '0 2px 4px rgba(0, 0, 0, 0.3)',
+                            }}
                         >
                             {icon.icon}
                         </motion.div>
@@ -106,7 +119,7 @@ ProjectCard.propTypes = {
         fecha: PropTypes.string.isRequired,
         puesto: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
-        image: PropTypes.string.isRequired,
+        logo: PropTypes.string.isRequired,
         bg: PropTypes.string,
         icons: PropTypes.arrayOf(PropTypes.shape({
             icon: PropTypes.element.isRequired
@@ -130,16 +143,16 @@ const Projects = () => {
             fecha: "Octubre 2024 - Diciembre 2024",
             puesto: "Practicante Desarrollador Full Stack",
             description: "Sistema administrativo para el laboratorio óptico.",
-            image: codeIcon,
+            logo: logoRbcLab,
             bg: "#c85dd7",
             icons: [
-                { icon: <FaPhp style={{ color: '#7a5bc5' }} size={30} /> },
-                { icon: <FaLaravel style={{ color: '#cc2927' }} size={20} /> },
-                { icon: <img src={vuejsLogo} alt="Vue.js" width={25} height={25} /> },
-                { icon: <img src={bootstrapLogo} alt="Bootstrap" width={25} height={25} /> },
-                { icon: <FaGitlab style={{ color: '#d83b01' }} size={20} /> },
+                { icon: <FaPhp style={{ color: '#7a5bc5' }} size={30} />, bgColor: '#ede9f6ff' },
+                { icon: <FaLaravel style={{ color: '#cc2927' }} size={20} />, bgColor: '#fdecea' },
+                { icon: <img src={vuejsLogo} alt="Vue.js" width={25} height={25} />, bgColor: '#e0f4ef' },
+                { icon: <img src={bootstrapLogo} alt="Bootstrap" width={25} height={25} />, bgColor: '#f0e9fa' },
+                { icon: <FaGitlab style={{ color: '#d83b01' }} size={20} />, bgColor: '#fff0e5' },
             ],
-            url: ""
+            url: "https://github.com/LuisVera22/admin.git"
         },
         {
             title: "Proyecto Hogar",
@@ -147,15 +160,27 @@ const Projects = () => {
             fecha: "Marzo 2025 - Actualidad",
             puesto: "Practicante Desarrollador Full Stack",
             description: "Portal web para la empresa de servicios inmobiliarios.",
-            image: codeIcon,
-            bg: "#d7a15d",
+            logo: logoProyectoHogar,
+            bg: "#8B1E3F",
             icons: [
-                { icon: <img src={javaLogo} alt="Java" width={30} height={30} /> },
-                { icon: <SiSpringboot style={{ color: '#47a248' }} size={20} /> },
-                { icon: <img src={bootstrapLogo} alt="Bootstrap" width={25} height={25} /> },
-                { icon: <FaGitlab style={{ color: '#d83b01' }} size={20} /> }
+                {
+                    icon: <img src={javaLogo} alt="Java" width={30} height={30} />,
+                    bgColor: '#fff4ec'
+                },
+                {
+                    icon: <SiSpringboot style={{ color: '#47a248' }} size={20} />,
+                    bgColor: '#e6f4e9'
+                },
+                {
+                    icon: <img src={bootstrapLogo} alt="Bootstrap" width={25} height={25} />,
+                    bgColor: '#f0e9fa'
+                },
+                {
+                    icon: <FaGitlab style={{ color: '#d83b01' }} size={20} />,
+                    bgColor: '#fff0e5'
+                }
             ],
-            url: ""
+            url: "https://appwebproyectohogar.onrender.com"
         }
     ];
 
