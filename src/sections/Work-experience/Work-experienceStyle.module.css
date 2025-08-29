@@ -1,0 +1,128 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 3rem;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.timeline {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background: var(--text-color);
+    transform: translateX(-50%);
+}
+
+.timelineItem {
+    position: relative;
+    margin: 2rem 0;
+    width: 100%;
+    display: flex;
+}
+
+.timelineItem:nth-child(even) {
+    justify-content: flex-start;
+}
+
+.timelineItem:nth-child(odd) {
+    justify-content: flex-end;
+}
+
+.timelineItem::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background: var(--text-color);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timelineContent {
+    background: transparent;
+    border-radius: 10px;
+    padding: .6rem;
+    box-shadow: 0 4px 15px var(--text-color);
+    width: 45%;
+    text-align: left;
+}
+
+.timelineItem:nth-child(even) .timelineContent {
+    margin-right: 40px;
+}
+
+.timelineItem:nth-child(odd) .timelineContent {
+    margin-left: 40px;
+}
+
+.timelineContent h2 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.timelineContent h3 {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.timelineContent h3 span {
+    font-weight: normal;
+    font-size: 0.9rem;
+}
+
+.project h4 {
+    font-size: 1rem;
+    margin-top: 0.8rem;
+    color: var(--text-color);
+}
+
+.project ul {
+    font-family: 'Roboto Mono', monospace;
+    list-style: disc inside;
+    margin-top: 0.5rem;
+    color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 20px;
+        transform: none;
+    }
+
+    .timelineItem,
+    .timelineItem:nth-child(odd) {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .timelineItem::before {
+        left: 12px;
+        transform: none;
+    }
+
+    .timelineContent {
+        min-width: 250px;
+        margin-left: 40px;
+        margin-right: 0;
+    }
+}
