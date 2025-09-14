@@ -59,7 +59,8 @@
 .timelineContent {
     background: transparent;
     border-radius: 10px;
-    padding: .6rem;
+    padding: 2rem;
+    box-sizing: border-box;
     box-shadow: 0 4px 15px var(--text-color);
     width: 45%;
     text-align: left;
