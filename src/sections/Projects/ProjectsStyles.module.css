@@ -1,4 +1,4 @@
-.projectsSection {
+.container {
   width: 80%;
   max-width: 1200px;
   margin: 0 auto;
@@ -96,7 +96,7 @@
 }
 
 @media (max-width: 768px) {
-  .projectsSection {
+  .container {
     padding: 3rem 1rem;
   }
   
@@ -112,7 +112,7 @@
 }
 
 @media (max-width: 480px) {
-  .projectsSection {
+  .container {
     padding: 2rem 0.5rem;
   }
   

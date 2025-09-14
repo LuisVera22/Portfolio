@@ -185,7 +185,7 @@ const Projects = () => {
     ];
 
     return (
-        <section id="projects" className={styles.projectsSection} ref={sectionRef}>
+        <section id="projects" className={styles.container} ref={sectionRef}>
             <motion.div
                 style={{
                     opacity: useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0]),
