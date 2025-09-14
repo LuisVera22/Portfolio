@@ -8,6 +8,15 @@
   --footer-text-color: #585858;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
 [data-theme='dark'] {
   --background-color: #222;
   --btn-color: #fff;
