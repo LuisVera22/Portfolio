@@ -157,7 +157,7 @@ const Projects = () => {
         {
             title: "Proyecto Hogar",
             empresa: "Tendencia Perú",
-            fecha: "Marzo 2025 - Actualidad",
+            fecha: "Marzo 2025 - Julio 2025",
             puesto: "Practicante Desarrollador Full Stack",
             description: "Portal web para la empresa de servicios inmobiliarios.",
             logo: logoProyectoHogar,
